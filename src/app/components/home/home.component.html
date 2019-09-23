@@ -1,0 +1,35 @@
+<!--
+app-ng-style
+-->
+<app-ng-style></app-ng-style>
+<hr>
+<!--
+app-ng-class
+-->
+<app-ng-class>
+
+</app-ng-class>
+<!--
+Directivas
+-->
+<hr>
+<h3>Directivas</h3>
+<!--
+appResaltado  // llamando la directiva
+-->
+<p appResaltado>
+  Hola estoy resaltado a travez de la directiva appResaltado
+</p>
+
+<!--
+[appResaltado]="'orange'"  // de esta forma angular se encarga de la directiva y
+y la hace dinamica
+-->
+<p [appResaltado]="'blue'">
+  Este es otro parrafo que se le pasan parametros desde el HTML
+</p>
+
+<hr>
+<h3>ngSwitch</h3>
+
+<app-ng-switch></app-ng-switch>

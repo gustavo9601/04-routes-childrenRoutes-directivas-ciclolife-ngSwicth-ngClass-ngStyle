@@ -1,0 +1,38 @@
+
+
+<!--
+[ngSwitch]="alerta"  // recibie un parametro, que seera la opcion a filtrar o escoger
+en las opciones que contenga
+-->
+
+<div [ngSwitch]="alerta">
+  <!--
+  *ngSwitchCase="'success'"  // devolvemos la posible opcion
+  -->
+  <div *ngSwitchCase="'success'">success</div>
+  <div *ngSwitchCase="'info'">info</div>
+  <div *ngSwitchCase="'warning'">info</div>
+  <!--
+  *ngSwitchDefault  // ejecuta como codigo defualt si no encentra concidencias
+  -->
+  <div *ngSwitchDefault>output2</div>
+</div>
+
+
+<div [ngSwitch]="alerta">
+  <div *ngSwitchCase="'primary'"  class="alert alert-primary" role="alert">
+    A simple primary alert—check it out!
+  </div>
+  <div *ngSwitchCase="'secondary'" class="alert alert-secondary" role="alert">
+    A simple secondary alert—check it out!
+  </div>
+  <div *ngSwitchCase="'success'" class="alert alert-success" role="alert">
+    A simple success alert—check it out!
+  </div>
+  <div *ngSwitchDefault class="alert alert-danger" role="alert">
+    A simple danger alert—check it out!
+  </div>
+</div>
+
+<button class="btn btn-outline-primary" type="button" (click)="alerta = 'success'">Actualizar estado</button>
+

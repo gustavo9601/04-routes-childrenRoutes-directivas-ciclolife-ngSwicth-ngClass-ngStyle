@@ -1,0 +1,55 @@
+
+<h3>ngClass</h3>
+<!--Asginado directamente una clae-->
+<div  [ngClass]="'alert-info'" class="alert" role="alert">
+  A simple primary alert—check it out!
+</div>
+<!--Pasando una variable a cambio de la clase-->
+<div  [ngClass]="alerta" class="alert alert-primary" role="alert">
+  A simple primary alert—check it out!
+</div>
+
+<!--Le pasamos una variable, que cambiara con eventos de los botones-->
+<div  [ngClass]="alerta2" class="alert" role="alert">
+  A simple primary alert—check it out!
+</div>
+
+
+<button type="button" class="btn btn-info" (click)="alerta2 = 'alert-info'">Info</button> |
+<button type="button" class="btn btn-success" (click)="alerta2 = 'alert-success'">Success</button>
+
+<br>
+
+<!--
+[ngClass]="{'text-danger': true}"  se aplicara la clase text-danger, si lo que deuvelve es true
+-->
+<h4 [ngClass]="{'text-danger': true}">
+  Hola Mundo
+</h4>
+
+<!--
+[ngClass]="{'text-danger': propiedades.danger, 'text-info': !propiedades.danger}"
+validara las posibles condicion jeraquicamente, y la que devuelva true se aplicara la clase
+-->
+<h4 [ngClass]="{'text-danger': propiedades.danger, 'text-info': !propiedades.danger}">
+  Hola Mundo 2
+</h4>
+
+<button class="btn btn-danger"
+        (click)="propiedades.danger = !propiedades.danger"
+        [ngClass]="{ 'btn-danger': propiedades.danger, 'btn-info': !propiedades.danger}">Cambiar Propiedades</button>
+
+<hr>
+<h3>Emulando Proceso asincrno con btn</h3>
+
+<!--
+[enabled]="loading"  // angular se encarga de usar la variable para controlar esa propiedad
+-->
+<button class="btn btn-primary"
+        (click)="procesoAsincrono()"
+        [disabled]="loading">
+  <i class="fa"
+     [ngClass]="{'fa-refresh fa-spin': loading, 'fa-save': !loading}"></i>
+      <span *ngIf="!loading"> Guardar peticion</span>
+      <span *ngIf="loading"> Por favor espere</span>
+</button>
